@@ -1,0 +1,48 @@
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td><h3>Hours</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>Minutes</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>Seconds</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>MiiliSeconds</h3></td>
+            </tr>
+            <tr>
+                <td><h3>{{ws.hr}}</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>{{ws.min}}</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>{{ws.sec}}</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>{{ws.ms}}</h3></td>
+            </tr>
+            <tr>
+                <td><button (click)="ws.start()" [disabled]="ws.flag1">{{ws.flag2?"Start":"Resume"}}</button></td>
+                <td></td>
+                <td><button (click)="ws.pause()" [disabled]="!ws.flag1">Pause</button></td>
+                <td></td>
+                <td><button (click)="ws.reset()" [disabled]="ws.flag2">Reset</button></td>
+                <td></td>
+                <td><button (click)="ws.sprint()" [disabled]="ws.flag4">Sprint</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <h3>Laps / Sprints</h3>
+    <table *ngFor="let lap of ws.spval">
+        <tbody>
+            <tr>
+                <td><h3>{{lap.hour}}</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>{{lap.minute}}</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>{{lap.second}}</h3></td>
+                <td><h3>:</h3></td>
+                <td><h3>{{lap.millis}}</h3></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
